@@ -1,5 +1,10 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 // Start a new session or resume an existing one
 session_start();
 
