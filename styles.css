@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo-placeholder {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    margin-right: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    color: #fff;
+}
+
+/* Hide Sign Up and Login sections when user is already logged in */
+main section#signup,
+main section#login {
+   display: none;
+}
+
+#signup,
+#login {
+   display: none;
+}
+
+.logged-in #signup,
+.logged-in #login {
+   display: block;
+}

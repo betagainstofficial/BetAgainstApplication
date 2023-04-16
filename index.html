@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetAgainst - Front Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-placeholder">LOGO</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#live-betting">Live Betting</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="signup.php">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="live-betting">
+            <?php
+            // Start a new session or resume an existing one
+            session_start();
+
+            // Redirect to login page if user is not logged in
+            if (!isset($_SESSION['username'])) {
+               header('Location: login.php');
+               exit();
+            }
+            ?>
+
+            <!-- Live Betting section content -->
+        </section>
+
+        <section id="signup">
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="post">
+               <label for="username">Username:</label>
+               <input type="text" id="username" name="username" required>
+               <br>
+               <label for="password">Password:</label>
+               <input type="password" id="password" name="password" required>
+               <br>
+               <input type="submit" value="Sign Up">
+            </form>
+         </section>
+
+         <section id="login">
+            <h2>Login</h2>
+            <form action="login_process.php" method="post">
+               <label for="username">Username:</label>
+               <input type="text" id="username" name="username" required>
+               <br>
+               <label for="password">Password:</label>
+               <input type="password" id="password" name="password" required>
+               <br>
+               <input type="submit" value="Login">
+            </form>
+         </section>
+         
+    </main>
+    <footer>
+        <p>&copy; 2023 BetAgainst. All rights reserved.</p>
+    </footer>
+</body>
+</html>
